@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DW Mochi - Mochi Segar Tanpa Pengawet dari Yogyakarta</title>
+  <meta name="description"
+    content="DW Mochi adalah UMKM kue mochi sejak 2015 di Kricak, Tegalrejo, Yogyakarta, dengan cabang di Magelang. Mochi segar setiap hari tanpa pengawet.">
+  <meta name="theme-color" content="#D9779A">
+
+  <meta property="og:title" content="DW Mochi">
+  <meta property="og:description" content="Mochi segar setiap hari tanpa pengawet, sejak 2015.">
+  <meta property="og:image" content="assets/img/logo/logo.png">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" type="image/png" href="assets/img/logo/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/logo/logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Noto+Sans+Javanese:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.2.3/css/flag-icons.min.css">
+
+  <link rel="stylesheet" href="assets/css/style.css?v=1">
+</head>
+
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top dw-navbar" aria-label="Navigasi utama">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a class="navbar-brand dw-navbar__brand" href="#beranda">
+        <img src="assets/img/logo/logo.png" class="dw-navbar__logo" alt="Logo DW Mochi" width="40" height="40">
+        <span class="dw-navbar__name">DW Mochi</span>
+      </a>
+
+      <div class="d-flex align-items-center gap-2 order-lg-3 ms-lg-4">
+        <div class="dw-lang-toggle" id="langToggle">
+          <button class="dw-lang-btn" type="button" id="langDropdown" aria-expanded="false"
+            aria-label="Pilih bahasa / Select language">
+            <span class="fi fi-id dw-lang-flag" id="langFlag" aria-hidden="true"></span>
+            <span class="dw-lang-code" id="langCode">ID</span>
+            <i class="bi bi-chevron-down dw-lang-arrow" aria-hidden="true"></i>
+          </button>
+          <ul class="dw-lang-menu" id="langMenu" aria-labelledby="langDropdown">
+            <li><button class="dw-lang-option" data-lang="id" type="button"><span class="fi fi-id me-2"
+                  aria-hidden="true"></span>Indonesia (ID)</button></li>
+            <li><button class="dw-lang-option" data-lang="jv" type="button"><span class="fi fi-id me-2"
+                  aria-hidden="true"></span>Basa Jawa (<span class="dw-jv-inline">ꦗꦮ</span>)</button></li>
+            <li><button class="dw-lang-option" data-lang="en" type="button"><span class="fi fi-gb me-2"
+                  aria-hidden="true"></span>English (EN)</button></li>
+          </ul>
+        </div>
+        <button class="navbar-toggler dw-navbar__toggler d-lg-none" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Buka menu navigasi"
+          data-i18n-aria="nav.openMenu">
+          <i class="bi bi-list"></i>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse order-lg-2" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link dw-nav-link" href="#beranda" data-i18n="nav.beranda">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link dw-nav-link" href="#tentang" data-i18n="nav.tentang">Tentang Kami</a></li>
+          <li class="nav-item"><a class="nav-link dw-nav-link" href="#produk" data-i18n="nav.produk">Produk</a></li>
+          <li class="nav-item"><a class="nav-link dw-nav-link" href="#proses" data-i18n="nav.proses">Proses Kerja</a></li>
+          <li class="nav-item"><a class="nav-link dw-nav-link" href="#struktur" data-i18n="nav.struktur">Struktur Organisasi</a></li>
+          <li class="nav-item"><a class="nav-link dw-nav-link" href="#lokasi" data-i18n="nav.lokasi">Lokasi</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn dw-nav-cta" href="#kontak" data-i18n="nav.hubungi">Hubungi Kami</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO / BERANDA ========== -->
+  <section id="beranda" class="dw-hero">
+    <div id="heroCarousel" class="dw-slider" tabindex="0">
+      <div class="dw-slider__track" aria-live="polite">
+        <div class="dw-slide dw-slide--active dw-hero__item dw-hero__item--1" data-photo="assets/img/hero/hero-1.jpg">
+          <div class="container dw-hero__content">
+            <div class="dw-hero__text">
+              <p class="dw-eyebrow mb-3" data-i18n="hero.eyebrow1"></p>
+              <h1 class="dw-hero__title" data-i18n="hero.title1"></h1>
+              <p class="dw-hero__sub" data-i18n="hero.sub1"></p>
+              <div class="dw-hero__actions">
+                <a href="#tentang" class="btn dw-btn-primary" data-i18n="hero.btnTentang"></a>
+                <a href="#kontak" class="btn dw-btn-outline" data-i18n="hero.btnPesan">Pesan Sekarang</a>
+              </div>
+            </div>
+            <div class="dw-hero__art" data-mochi="kacang" data-mochi-size="lg" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <div class="dw-slide dw-hero__item dw-hero__item--2">
+          <div class="container dw-hero__content">
+            <div class="dw-hero__text">
+              <p class="dw-eyebrow mb-3" data-i18n="hero.eyebrow2"></p>
+              <h1 class="dw-hero__title" data-i18n="hero.title2"></h1>
+              <p class="dw-hero__sub" data-i18n="hero.sub2"></p>
+              <div class="dw-hero__actions">
+                <a href="#produk" class="btn dw-btn-primary" data-i18n="hero.btnLihat"></a>
+                <a href="#kontak" class="btn dw-btn-outline" data-i18n="hero.btnPesan">Pesan Sekarang</a>
+              </div>
+            </div>
+            <div class="dw-hero__art dw-hero__art--trio" aria-hidden="true"><span data-mochi="matcha" data-mochi-size="md"></span><span data-mochi="taro" data-mochi-size="md"></span><span data-mochi="coklat" data-mochi-size="md"></span></div>
+          </div>
+        </div>
+
+        <div class="dw-slide dw-hero__item dw-hero__item--3" data-photo="assets/img/hero/hero-3.jpg">
+          <div class="container dw-hero__content">
+            <div class="dw-hero__text">
+              <p class="dw-eyebrow mb-3" data-i18n="hero.eyebrow3"></p>
+              <h1 class="dw-hero__title" data-i18n="hero.title3"></h1>
+              <p class="dw-hero__sub" data-i18n="hero.sub3"></p>
+              <div class="dw-hero__actions">
+                <a href="#proses" class="btn dw-btn-primary" data-i18n="hero.btnProses"></a>
+                <a href="#kontak" class="btn dw-btn-outline" data-i18n="hero.btnPesan">Pesan Sekarang</a>
+              </div>
+            </div>
+            <div class="dw-hero__art" data-mochi="oreo" data-mochi-size="lg" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <div class="dw-slide dw-hero__item dw-hero__item--1" data-photo="assets/img/hero/hero-4.jpg">
+          <div class="container dw-hero__content">
+            <div class="dw-hero__text">
+              <p class="dw-eyebrow mb-3" data-i18n="hero.eyebrow4"></p>
+              <h1 class="dw-hero__title" data-i18n="hero.title4"></h1>
+              <p class="dw-hero__sub" data-i18n="hero.sub4"></p>
+              <div class="dw-hero__actions">
+                <a href="#struktur" class="btn dw-btn-primary" data-i18n="hero.btnStruktur"></a>
+                <a href="#kontak" class="btn dw-btn-outline" data-i18n="hero.btnPesan">Pesan Sekarang</a>
+              </div>
+            </div>
+            <div class="dw-hero__art" data-mochi="matcha" data-mochi-size="lg" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <div class="dw-slide dw-hero__item dw-hero__item--2" data-photo="assets/img/hero/hero-5.jpg">
+          <div class="container dw-hero__content">
+            <div class="dw-hero__text">
+              <p class="dw-eyebrow mb-3" data-i18n="hero.eyebrow5"></p>
+              <h1 class="dw-hero__title" data-i18n="hero.title5"></h1>
+              <p class="dw-hero__sub" data-i18n="hero.sub5"></p>
+              <div class="dw-hero__actions">
+                <a href="#lokasi" class="btn dw-btn-primary" data-i18n="hero.btnLokasi"></a>
+                <a href="#kontak" class="btn dw-btn-outline" data-i18n="hero.btnPesan">Pesan Sekarang</a>
+              </div>
+            </div>
+            <div class="dw-hero__art" data-mochi="coklat" data-mochi-size="lg" aria-hidden="true"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="dw-slider__nav dw-slider__nav--prev" id="heroPrev" type="button" aria-label="Slide sebelumnya"><i class="bi bi-chevron-left"></i></button>
+      <button class="dw-slider__nav dw-slider__nav--next" id="heroNext" type="button" aria-label="Slide berikutnya"><i class="bi bi-chevron-right"></i></button>
+      <div class="dw-slider__indicators">
+        <button type="button" data-slide="0" class="active" aria-label="Slide 1"></button>
+        <button type="button" data-slide="1" aria-label="Slide 2"></button>
+        <button type="button" data-slide="2" aria-label="Slide 3"></button>
+        <button type="button" data-slide="3" aria-label="Slide 4"></button>
+        <button type="button" data-slide="4" aria-label="Slide 5"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ANGKA ========== -->
+  <section id="angka" class="dw-section dw-section--muted dw-angka">
+    <div class="container">
+      <div class="row g-4 text-center">
+        <div class="col-6 col-lg-3 dw-reveal">
+          <div class="dw-stat"><span class="dw-stat__num" data-count="2015">2015</span>
+            <p class="dw-stat__label" data-i18n="angka.berdiri">Tahun berdiri</p></div>
+        </div>
+        <div class="col-6 col-lg-3 dw-reveal">
+          <div class="dw-stat"><span class="dw-stat__num" data-count="10" data-suffix="+">10+</span>
+            <p class="dw-stat__label" data-i18n="angka.tahun">Tahun berpengalaman</p></div>
+        </div>
+        <div class="col-6 col-lg-3 dw-reveal">
+          <div class="dw-stat"><span class="dw-stat__num" data-count="2">2</span>
+            <p class="dw-stat__label" data-i18n="angka.cabang">Cabang (Yogyakarta &amp; Magelang)</p></div>
+        </div>
+        <div class="col-6 col-lg-3 dw-reveal">
+          <div class="dw-stat"><span class="dw-stat__num" data-count="5">5</span>
+            <p class="dw-stat__label" data-i18n="angka.varian">Varian rasa</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TENTANG ========== -->
+  <section id="tentang" class="dw-section">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-6 dw-reveal">
+          <p class="dw-eyebrow" data-i18n="tentang.eyebrow">Tentang Kami</p>
+          <h2 class="dw-heading" data-i18n="tentang.title">Berawal dari satu resep mochi kacang gula jawa.</h2>
+          <p class="dw-text" data-i18n="tentang.p1"></p>
+          <p class="dw-text" data-i18n="tentang.p2"></p>
+          <p class="dw-text" data-i18n="tentang.p3"></p>
+          <div class="dw-vm">
+            <div class="dw-vm__icon"><i class="bi bi-eye"></i></div>
+            <div>
+              <h3 class="dw-vm__title" data-i18n="tentang.visiTitle">Visi</h3>
+              <p class="dw-text mb-0" data-i18n="tentang.visi"></p>
+            </div>
+          </div>
+          <div class="dw-vm">
+            <div class="dw-vm__icon"><i class="bi bi-bullseye"></i></div>
+            <div>
+              <h3 class="dw-vm__title" data-i18n="tentang.misiTitle">Misi</h3>
+              <ul class="dw-misi mb-0">
+                <li data-i18n="tentang.misi1"></li>
+                <li data-i18n="tentang.misi2"></li>
+                <li data-i18n="tentang.misi3"></li>
+                <li data-i18n="tentang.misi4"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 dw-reveal">
+          <div class="dw-about-photos">
+            <img src="assets/img/hero/hero-1.jpg" class="dw-about-photos__main" alt="Proses mengayak tepung ketan" loading="lazy">
+            <img src="assets/img/hero/hero-5.jpg" class="dw-about-photos__side" alt="Mochi di atas loyang" loading="lazy">
+          </div>
+          <div class="dw-profile">
+            <h3 class="dw-profile__title" data-i18n="profil.title">Profil Usaha</h3>
+            <table class="dw-profile__table">
+              <tr><th data-i18n="profil.nama">Nama usaha</th><td>DW Mochi</td></tr>
+              <tr><th data-i18n="profil.bentuk">Bentuk usaha</th><td data-i18n="profil.bentukV">UMKM</td></tr>
+              <tr><th data-i18n="profil.bidang">Bidang usaha</th><td data-i18n="profil.bidangV">Kuliner kue mochi</td></tr>
+              <tr><th data-i18n="profil.berdiri">Tahun berdiri</th><td data-i18n="profil.berdiriV">11 Oktober 2015</td></tr>
+              <tr><th data-i18n="profil.pemilik">Pemilik</th><td data-i18n="profil.pemilikV">Ibu Dwi Sumarsih</td></tr>
+              <tr><th data-i18n="profil.produk">Produk</th><td data-i18n="profil.produkV">Mochi kacang, matcha, coklat, taro, oreo</td></tr>
+              <tr><th data-i18n="profil.cabang">Cabang</th><td data-i18n="profil.cabangV">Yogyakarta (pusat) dan Magelang</td></tr>
+              <tr><th data-i18n="profil.alamat">Alamat pusat</th><td>Kricak, Kec. Tegalrejo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55242</td></tr>
+              <tr><th data-i18n="profil.alamatCabang">Alamat cabang</th><td>Dusun Alun-alun, Beteng, Menoreh, Kec. Salaman, Kabupaten Magelang, Jawa Tengah 56162</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRODUK ========== -->
+  <section id="produk" class="dw-section dw-section--muted">
+    <div class="container">
+      <div class="text-center mb-5 dw-reveal">
+        <p class="dw-eyebrow" data-i18n="produk.eyebrow">Produk Kami</p>
+        <h2 class="dw-heading" data-i18n="produk.title">Pilih mochi favoritmu</h2>
+        <p class="dw-text dw-lead mx-auto" data-i18n="produk.sub">Semua mochi dibuat segar setiap hari tanpa pengawet. Harga per buah, berlaku di kedua cabang.</p>
+      </div>
+      <div class="row g-4 justify-content-center" id="produkGrid"></div>
+      <p class="text-center dw-text mt-5 mb-0 dw-reveal">
+        <i class="bi bi-gift me-1"></i><span data-i18n="produk.note">Melayani pesanan dalam jumlah banyak untuk acara. Hubungi kami lewat WhatsApp.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== PROSES KERJA ========== -->
+  <section id="proses" class="dw-section">
+    <div class="container">
+      <div class="text-center mb-5 dw-reveal">
+        <p class="dw-eyebrow" data-i18n="proses.eyebrow">Proses Kerja</p>
+        <h2 class="dw-heading" data-i18n="proses.title">Dari dapur kami ke tanganmu</h2>
+        <p class="dw-text dw-lead mx-auto mb-0" data-i18n="proses.sub"></p>
+      </div>
+      <div class="row g-4 dw-steps">
+        <div class="col-md-4 dw-reveal">
+          <article class="dw-step2">
+            <img src="assets/img/hero/hero-1.jpg" alt="" class="dw-step2__img" loading="lazy">
+            <div class="dw-step2__body">
+              <span class="dw-step2__num">01</span>
+              <h3 class="dw-step2__title" data-i18n="proses.s1Title"></h3>
+              <p class="dw-text mb-0" data-i18n="proses.s1"></p>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-4 dw-reveal">
+          <article class="dw-step2">
+            <img src="assets/img/hero/hero-3.jpg" alt="" class="dw-step2__img" loading="lazy">
+            <div class="dw-step2__body">
+              <span class="dw-step2__num">02</span>
+              <h3 class="dw-step2__title" data-i18n="proses.s2Title"></h3>
+              <p class="dw-text mb-0" data-i18n="proses.s2"></p>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-4 dw-reveal">
+          <article class="dw-step2">
+            <img src="assets/img/hero/hero-4.jpg" alt="" class="dw-step2__img" loading="lazy">
+            <div class="dw-step2__body">
+              <span class="dw-step2__num">03</span>
+              <h3 class="dw-step2__title" data-i18n="proses.s3Title"></h3>
+              <p class="dw-text mb-0" data-i18n="proses.s3"></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== KOMITMEN ========== -->
+  <section id="komitmen" class="dw-komitmen">
+    <div class="container text-center dw-reveal">
+      <i class="bi bi-heart-fill dw-komitmen__icon"></i>
+      <h2 class="dw-komitmen__title" data-i18n="komitmen.title">Tanpa pengawet, dibuat hari ini, dimakan hari ini.</h2>
+      <p class="dw-komitmen__text" data-i18n="komitmen.text">Kami percaya mochi paling enak saat masih segar. Karena itu setiap mochi dibuat setiap hari dalam jumlah secukupnya.</p>
+    </div>
+  </section>
+
+  <!-- ========== STRUKTUR ========== -->
+  <section id="struktur" class="dw-section dw-section--muted">
+    <div class="container">
+      <div class="text-center mb-5 dw-reveal">
+        <p class="dw-eyebrow" data-i18n="struktur.eyebrow">Struktur Organisasi</p>
+        <h2 class="dw-heading" data-i18n="struktur.title">Orang-orang di balik DW Mochi</h2>
+      </div>
+      <div class="dw-org dw-reveal">
+        <div class="dw-org__top">
+          <div class="dw-person dw-person--lead">
+            <div class="dw-person__avatar"><img src="assets/img/tim/dwi.jpg?v=2" alt="Foto Dwi Sumarsih" loading="lazy"></div>
+            <h3 class="dw-person__name">Dwi Sumarsih</h3>
+            <p class="dw-person__role" data-i18n="struktur.pemilik">Pemilik</p>
+          </div>
+        </div>
+        <div class="dw-org__line"></div>
+        <div class="dw-org__row">
+          <div class="dw-person">
+            <div class="dw-person__avatar"><img src="assets/img/tim/yoga.jpg" alt="Foto Yoga Noor Fadholy" loading="lazy"></div>
+            <h3 class="dw-person__name">Yoga Noor Fadholy</h3>
+            <p class="dw-person__role" data-i18n="struktur.pra">Kepala Divisi Pra-Produksi</p>
+          </div>
+          <div class="dw-person">
+            <div class="dw-person__avatar"><img src="assets/img/tim/handy.jpg" alt="Foto Handy Emmanuelo Marthin Ropa" loading="lazy"></div>
+            <h3 class="dw-person__name">Handy Emmanuelo Marthin Ropa</h3>
+            <p class="dw-person__role" data-i18n="struktur.produksi">Kepala Divisi Produksi</p>
+          </div>
+          <div class="dw-person">
+            <div class="dw-person__avatar"><img src="assets/img/tim/alif.jpg" alt="Foto Alif Dio Ardiansyah" loading="lazy"></div>
+            <h3 class="dw-person__name">Alif Dio Ardiansyah</h3>
+            <p class="dw-person__role" data-i18n="struktur.pengemasan">Kepala Divisi Pengemasan</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LOKASI ========== -->
+  <section id="lokasi" class="dw-section">
+    <div class="container">
+      <div class="text-center mb-4 dw-reveal">
+        <p class="dw-eyebrow" data-i18n="lokasi.eyebrow">Lokasi</p>
+        <h2 class="dw-heading" data-i18n="lokasi.title">Kunjungi toko kami</h2>
+      </div>
+      <div class="dw-branch-tabs dw-reveal" role="tablist">
+        <button class="dw-branch-tab active" type="button" data-branch="jogja" role="tab" aria-selected="true">
+          <i class="bi bi-shop"></i> <span data-i18n="lokasi.tabJogja">Yogyakarta (Pusat)</span></button>
+        <button class="dw-branch-tab" type="button" data-branch="magelang" role="tab" aria-selected="false">
+          <i class="bi bi-shop-window"></i> <span data-i18n="lokasi.tabMagelang">Magelang (Cabang)</span></button>
+      </div>
+      <div class="row g-4 align-items-stretch dw-reveal">
+        <div class="col-lg-7 order-lg-2">
+          <div class="dw-map">
+            <div class="dw-map__loading" id="mapLoading"><div class="spinner-border" role="status"></div>
+              <span data-i18n="lokasi.loading">Memuat peta…</span></div>
+            <iframe id="mapFrame" title="Peta lokasi DW Mochi" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="dw-map__fallback d-none" id="mapFallback">
+              <i class="bi bi-map"></i>
+              <p data-i18n="lokasi.fallback">Peta tidak dapat dimuat. Silakan buka lewat tombol Petunjuk Arah.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="dw-branch-card">
+            <h3 class="dw-branch-card__title" id="branchName">DW Mochi Yogyakarta</h3>
+            <span class="dw-branch-card__tag" id="branchTag" data-i18n="lokasi.pusat">Pusat</span>
+            <ul class="dw-branch-card__list">
+              <li><i class="bi bi-geo-alt"></i><div><small data-i18n="lokasi.lAlamat">Alamat</small><span id="branchAddr"></span></div></li>
+              <li><i class="bi bi-clock"></i><div><small data-i18n="lokasi.lJam">Jam buka</small><span data-i18n="lokasi.jam">Setiap hari, 09.00–21.00 WIB</span></div></li>
+              <li><i class="bi bi-whatsapp"></i><div><small data-i18n="lokasi.lWa">Telepon / WhatsApp</small><a id="branchWa" class="dw-link dw-keep-latin" href="https://wa.me/6285729011195" target="_blank" rel="noopener">+62 857-2901-1195</a></div></li>
+            </ul>
+            <div class="d-flex flex-wrap gap-2">
+              <a class="btn dw-btn-primary" id="branchDir" href="https://maps.app.goo.gl/KF9BQ9uWFpLtEMph6" target="_blank" rel="noopener">
+                <i class="bi bi-sign-turn-right me-1"></i><span data-i18n="lokasi.arah">Petunjuk Arah</span></a>
+              <a class="btn dw-btn-outline" id="branchChat" href="https://wa.me/6285729011195" target="_blank" rel="noopener">
+                <i class="bi bi-whatsapp me-1"></i><span data-i18n="lokasi.chat">Chat Cabang Ini</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== KONTAK ========== -->
+  <section id="kontak" class="dw-section dw-section--muted">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-5 dw-reveal">
+          <p class="dw-eyebrow" data-i18n="kontak.eyebrow">Hubungi Kami</p>
+          <h2 class="dw-heading" data-i18n="kontak.title">Mau pesan atau tanya-tanya?</h2>
+          <p class="dw-text" data-i18n="kontak.sub">Isi formulir ini, lalu pesanmu akan langsung terbuka di WhatsApp cabang yang kamu pilih.</p>
+          <ul class="dw-contact-list">
+            <li><i class="bi bi-whatsapp"></i><div><strong>Yogyakarta</strong><br><a class="dw-link" href="https://wa.me/6285729011195" target="_blank" rel="noopener">+62 857-2901-1195</a></div></li>
+            <li><i class="bi bi-whatsapp"></i><div><strong>Magelang</strong><br><a class="dw-link" href="https://wa.me/6281285636937" target="_blank" rel="noopener">+62 812-8563-6937</a></div></li>
+            <li><i class="bi bi-clock"></i><div data-i18n="lokasi.jam">Setiap hari, 09.00–21.00 WIB</div></li>
+          </ul>
+        </div>
+        <div class="col-lg-7 dw-reveal">
+          <form id="kontakForm" class="dw-form" novalidate>
+            <div class="mb-3">
+              <label class="form-label" data-i18n="kontak.cabang">Pesan ke cabang</label>
+              <div class="dw-radio-group">
+                <label class="dw-radio"><input type="radio" name="cabang" value="jogja" checked>
+                  <span>Yogyakarta</span></label>
+                <label class="dw-radio"><input type="radio" name="cabang" value="magelang">
+                  <span>Magelang</span></label>
+              </div>
+            </div>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="inputNama" class="form-label" data-i18n="kontak.nama">Nama</label>
+                <input type="text" class="form-control" id="inputNama" autocomplete="name">
+                <div class="dw-error" id="errNama" data-i18n="kontak.errNama">Nama wajib diisi.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="inputKebutuhan" class="form-label" data-i18n="kontak.kebutuhan">Keperluan</label>
+                <select class="form-select" id="inputKebutuhan">
+                  <option value="pesan" data-i18n="kontak.optPesan">Pesan mochi</option>
+                  <option value="acara" data-i18n="kontak.optAcara">Pesanan untuk acara</option>
+                  <option value="tanya" data-i18n="kontak.optTanya">Tanya informasi</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label for="inputPesan" class="form-label" data-i18n="kontak.pesan">Pesan</label>
+                <textarea class="form-control" id="inputPesan" rows="4" data-i18n-placeholder="kontak.pesanPh"
+                  placeholder="Contoh: Mau pesan 20 mochi kacang dan 10 mochi matcha untuk besok siang."></textarea>
+                <div class="dw-error" id="errPesan" data-i18n="kontak.errPesan">Pesan minimal 10 karakter.</div>
+              </div>
+            </div>
+            <button type="submit" class="btn dw-btn-primary mt-4">
+              <i class="bi bi-whatsapp me-1"></i><span data-i18n="kontak.kirim">Kirim lewat WhatsApp</span></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="dw-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <img src="assets/img/logo/logo.png" alt="Logo DW Mochi" width="44" height="44" class="dw-footer__logo">
+            <span class="dw-footer__brand">DW Mochi</span>
+          </div>
+          <p class="dw-footer__text" data-i18n="footer.desc">Mochi rumahan segar tanpa pengawet dari Kricak, Yogyakarta, sejak 2015.</p>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h4 class="dw-footer__head" data-i18n="footer.menu">Tautan cepat</h4>
+          <ul class="dw-footer__links">
+            <li><a href="#tentang" data-i18n="nav.tentang">Tentang Kami</a></li>
+            <li><a href="#produk" data-i18n="nav.produk">Produk</a></li>
+            <li><a href="#proses" data-i18n="nav.proses">Proses Kerja</a></li>
+            <li><a href="#struktur" data-i18n="nav.struktur">Struktur Organisasi</a></li>
+            <li><a href="#lokasi" data-i18n="nav.lokasi">Lokasi</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h4 class="dw-footer__head" data-i18n="footer.kontak">Kontak</h4>
+          <ul class="dw-footer__contact">
+            <li><i class="bi bi-whatsapp"></i><a href="https://wa.me/6285729011195" target="_blank" rel="noopener">+62 857-2901-1195 <span class="dw-footer__muted">(Yogyakarta)</span></a></li>
+            <li><i class="bi bi-whatsapp"></i><a href="https://wa.me/6281285636937" target="_blank" rel="noopener">+62 812-8563-6937 <span class="dw-footer__muted">(Magelang)</span></a></li>
+            <li><i class="bi bi-geo-alt"></i><span>Kricak, Tegalrejo, Kota Yogyakarta</span></li>
+            <li><i class="bi bi-geo-alt"></i><span>Beteng, Menoreh, Salaman, Kab. Magelang</span></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h4 class="dw-footer__head" data-i18n="footer.jamTitle">Jam operasional</h4>
+          <p class="dw-footer__text mb-1" data-i18n="footer.hari">Senin – Minggu</p>
+          <p class="dw-footer__hours dw-keep-latin">09.00 – 21.00 WIB</p>
+          <p class="dw-footer__text" data-i18n="footer.jamNote">Berlaku untuk kedua cabang.</p>
+        </div>
+      </div>
+      <hr class="dw-footer__hr">
+      <p class="dw-footer__copy mb-0">&copy; <span id="year">2026</span> DW Mochi. <span data-i18n="footer.copy">Situs ini dibuat untuk keperluan praktikum.</span></p>
+    </div>
+  </footer>
+
+  <!-- Modal pilih cabang (dari tombol produk) -->
+  <div class="dw-modal" id="branchModal" aria-hidden="true">
+    <div class="dw-modal__box" role="dialog" aria-modal="true" aria-labelledby="branchModalTitle">
+      <button class="dw-modal__close" type="button" aria-label="Tutup"><i class="bi bi-x-lg"></i></button>
+      <h3 id="branchModalTitle" data-i18n="modal.title">Pesan dari cabang mana?</h3>
+      <p class="dw-text" id="branchModalProduct"></p>
+      <div class="d-grid gap-2">
+        <button class="btn dw-btn-primary" type="button" data-pick="jogja"><i class="bi bi-shop me-1"></i>Yogyakarta</button>
+        <button class="btn dw-btn-outline" type="button" data-pick="magelang"><i class="bi bi-shop-window me-1"></i>Magelang</button>
+      </div>
+    </div>
+  </div>
+
+  <button class="dw-back-top" id="backToTop" type="button" aria-label="Kembali ke atas"><i class="bi bi-arrow-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="assets/js/lang.js?v=5"></script>
+  <script src="assets/js/aksara.js?v=3"></script>
+  <script src="assets/js/main.js?v=2"></script>
+</body>
+
+</html>

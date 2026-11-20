@@ -1,0 +1,411 @@
+/* style.css - DW Mochi */
+:root {
+  --dw-pink: #F4B6C8;
+  --dw-pink-soft: #FCE4EC;
+  --dw-pink-dark: #D9779A;
+  --dw-pink-deep: #B85A7E;
+  --dw-cream: #FFF8F3;
+  --dw-white: #FFFFFF;
+  --dw-brown: #6B4A3A;
+  --dw-brown-dark: #4A3128;
+  --dw-text: #4E3A31;
+  --dw-muted: #8A7268;
+  --dw-radius: 20px;
+  --dw-shadow: 0 10px 30px rgba(184, 90, 126, .12);
+  --dw-font-head: 'Fredoka', sans-serif;
+  --dw-font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+html { scroll-padding-top: 64px; }
+body { font-family: var(--dw-font-body); color: var(--dw-text); background: var(--dw-white); }
+h1, h2, h3, h4 { font-family: var(--dw-font-head); color: var(--dw-brown-dark); }
+
+/* ---------- Tombol ---------- */
+.dw-btn-primary {
+  background: var(--dw-pink-dark); color: #fff; border: 2px solid var(--dw-pink-dark);
+  border-radius: 999px; padding: .65rem 1.5rem; font-weight: 600;
+}
+.dw-btn-primary:hover, .dw-btn-primary:focus { background: var(--dw-pink-deep); border-color: var(--dw-pink-deep); color: #fff; }
+.dw-btn-outline {
+  background: transparent; color: var(--dw-pink-deep); border: 2px solid var(--dw-pink-dark);
+  border-radius: 999px; padding: .65rem 1.5rem; font-weight: 600;
+}
+.dw-btn-outline:hover { background: var(--dw-pink-soft); color: var(--dw-pink-deep); border-color: var(--dw-pink-dark); }
+
+/* ---------- Navbar ---------- */
+.dw-navbar { background: transparent; transition: box-shadow .3s, padding .3s; padding: .9rem 0; }
+.dw-navbar.scrolled { background: rgba(255, 248, 243, .94); backdrop-filter: blur(8px); box-shadow: 0 4px 20px rgba(107, 74, 58, .1); padding: .5rem 0; }
+.dw-navbar__brand { display: flex; align-items: center; gap: .5rem; }
+.dw-navbar__logo { width: 40px; height: 40px; object-fit: contain; }
+.dw-navbar__name { font-family: var(--dw-font-head); font-weight: 600; font-size: 1.35rem; color: var(--dw-pink-deep); }
+.dw-nav-link { color: var(--dw-brown) !important; font-weight: 500; border-radius: 999px; padding: .45rem .85rem !important; }
+.dw-nav-link:hover, .dw-nav-link.active { color: var(--dw-pink-deep) !important; background: var(--dw-pink-soft); }
+.dw-nav-cta { background: var(--dw-pink-dark); color: #fff; border-radius: 999px; padding: .5rem 1.2rem; font-weight: 600; }
+.dw-nav-cta:hover { background: var(--dw-pink-deep); color: #fff; }
+.dw-navbar__toggler { border: none; font-size: 1.7rem; color: var(--dw-brown); padding: .2rem .4rem; }
+.dw-navbar__toggler:focus { box-shadow: none; }
+@media (max-width: 991.98px) {
+  .dw-navbar:has(.navbar-collapse.show) { background: rgba(255, 248, 243, .96); }
+  .dw-navbar .navbar-collapse { background: var(--dw-cream); border-radius: 16px; padding: .75rem; margin-top: .75rem; box-shadow: var(--dw-shadow); }
+  .dw-nav-cta { display: block; text-align: center; margin-top: .5rem; }
+}
+
+/* Bahasa */
+.dw-lang-toggle { position: relative; }
+.dw-lang-btn { display: flex; align-items: center; gap: .4rem; background: #fff; border: 1.5px solid var(--dw-pink); border-radius: 999px; padding: .3rem .7rem; font-weight: 600; color: var(--dw-brown); font-size: .85rem; }
+.dw-lang-flag { border-radius: 3px; }
+.dw-lang-arrow { font-size: .7rem; transition: transform .2s; }
+.dw-lang-toggle.open .dw-lang-arrow { transform: rotate(180deg); }
+.dw-lang-menu { position: absolute; right: 0; top: calc(100% + 6px); background: #fff; list-style: none; padding: .4rem; margin: 0; border-radius: 12px; box-shadow: var(--dw-shadow); min-width: 170px; display: none; z-index: 1100; }
+.dw-lang-toggle.open .dw-lang-menu { display: block; }
+.dw-lang-option { width: 100%; text-align: left; background: none; border: none; padding: .5rem .7rem; border-radius: 8px; font-size: .9rem; color: var(--dw-text); }
+.dw-lang-option:hover, .dw-lang-option.active { background: var(--dw-pink-soft); }
+
+/* ---------- Hero ---------- */
+.dw-hero { position: relative; }
+.dw-slider { position: relative; overflow: hidden; outline: none; }
+.dw-slider__track { position: relative; min-height: 100vh; min-height: 100svh; }
+.dw-slide { position: absolute; inset: 0; opacity: 0; visibility: hidden; transition: opacity .7s ease, visibility .7s; }
+.dw-slide--active { opacity: 1; visibility: visible; position: relative; }
+.dw-hero__item { min-height: 100vh; min-height: 100svh; display: flex; align-items: center; padding-top: 80px; }
+.dw-hero__item--1 { background: radial-gradient(circle at 80% 40%, #FDE3EA 0, #FFF8F3 55%); }
+.dw-hero__item--2 { background: radial-gradient(circle at 78% 45%, #E6F1DC 0, #FFF8F3 55%); }
+.dw-hero__item--3 { background: radial-gradient(circle at 80% 40%, #EDE3F5 0, #FFF8F3 55%); }
+.dw-hero__content { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding-top: 2rem; padding-bottom: 4rem; }
+.dw-hero__text { max-width: 560px; }
+.dw-hero__title { font-size: clamp(2.1rem, 4.5vw, 3.4rem); font-weight: 600; line-height: 1.15; margin-bottom: 1rem; }
+.dw-hero__sub { font-size: 1.1rem; color: var(--dw-muted); margin-bottom: 1.8rem; }
+.dw-hero__actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+.dw-hero__art { flex-shrink: 0; animation: dw-float 5s ease-in-out infinite; }
+.dw-hero__art--trio { display: flex; align-items: flex-end; }
+.dw-hero__art--trio span:nth-child(2) { margin: 0 -24px; transform: translateY(-30px); z-index: 1; }
+@keyframes dw-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+@media (max-width: 991.98px) {
+  .dw-hero__content { flex-direction: column-reverse; text-align: center; padding-top: 1rem; }
+  .dw-hero__actions { justify-content: center; }
+  .dw-hero__art .dw-mochi--lg, .dw-hero__art.dw-mochi-wrap { transform: scale(.7); }
+  .dw-hero__art--trio .dw-mochi--md { width: 120px; height: 120px; }
+}
+
+.dw-slider__nav { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; border: none; background: rgba(255, 255, 255, .85); color: var(--dw-pink-deep); box-shadow: var(--dw-shadow); z-index: 5; }
+.dw-slider__nav--prev { left: 16px; }
+.dw-slider__nav--next { right: 16px; }
+.dw-slider__nav:hover { background: var(--dw-pink-dark); color: #fff; }
+.dw-slider__indicators { position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 5; }
+.dw-slider__indicators button { width: 10px; height: 10px; border-radius: 999px; border: none; background: var(--dw-pink); transition: width .3s; padding: 0; }
+.dw-slider__indicators button.active { width: 30px; background: var(--dw-pink-dark); }
+@media (max-width: 767.98px) { .dw-slider__nav { display: none; } }
+
+/* Foto latar penuh dengan lapisan pink (slide 1, 3, 4, 5) */
+.dw-hero__item.has-photo { background-size: cover; background-position: center; }
+.dw-hero__item.has-photo::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(122, 40, 78, .86) 0%, rgba(184, 90, 126, .6) 42%, rgba(217, 119, 154, .22) 75%, rgba(217, 119, 154, .12) 100%); }
+.dw-hero__item.has-photo .dw-hero__content { position: relative; z-index: 1; justify-content: flex-start; }
+.dw-hero__item.has-photo .dw-hero__art { display: none; }
+.dw-hero__item.has-photo .dw-hero__title { color: #fff; }
+.dw-hero__item.has-photo .dw-hero__sub { color: rgba(255, 255, 255, .92); }
+.dw-hero__item.has-photo .dw-eyebrow { color: #FFE3EC; }
+.dw-hero__item.has-photo .dw-btn-primary { background: #fff; border-color: #fff; color: var(--dw-pink-deep); }
+.dw-hero__item.has-photo .dw-btn-primary:hover { background: var(--dw-pink-soft); border-color: var(--dw-pink-soft); }
+.dw-hero__item.has-photo .dw-btn-outline { color: #fff; border-color: rgba(255, 255, 255, .85); }
+.dw-hero__item.has-photo .dw-btn-outline:hover { background: rgba(255, 255, 255, .15); color: #fff; }
+/* Tombol geser di atas foto: putih transparan */
+#heroCarousel.on-photo .dw-slider__nav { background: rgba(255, 255, 255, .12); color: rgba(255, 255, 255, .75); border: 1px solid rgba(255, 255, 255, .3); box-shadow: none; backdrop-filter: blur(3px); transition: background .25s, color .25s, border-color .25s; }
+#heroCarousel.on-photo .dw-slider__nav:hover, #heroCarousel.on-photo .dw-slider__nav:focus-visible { background: rgba(255, 255, 255, .85); color: var(--dw-pink-deep); border-color: transparent; box-shadow: var(--dw-shadow); }
+#heroCarousel.on-photo .dw-slider__indicators button { background: rgba(255, 255, 255, .5); }
+#heroCarousel.on-photo .dw-slider__indicators button.active { background: #fff; }
+.dw-hero__item.has-photo { image-rendering: auto; }
+@media (max-width: 991.98px) { .dw-hero__item.has-photo::before { background: rgba(122, 40, 78, .72); } }
+
+/* Navbar terang saat berada di atas slide berfoto */
+.dw-navbar.on-photo:not(.scrolled) .dw-navbar__name,
+.dw-navbar.on-photo:not(.scrolled) .dw-nav-link,
+.dw-navbar.on-photo:not(.scrolled) .dw-navbar__toggler { color: #fff !important; }
+.dw-navbar.on-photo:not(.scrolled) .dw-nav-link:hover,
+.dw-navbar.on-photo:not(.scrolled) .dw-nav-link.active { background: rgba(255, 255, 255, .18); }
+.dw-navbar.on-photo:not(.scrolled) .dw-nav-cta { background: #fff; color: var(--dw-pink-deep); }
+.dw-navbar.on-photo:not(.scrolled) .dw-navbar__logo { background: #fff; border-radius: 50%; padding: 3px; }
+@media (max-width: 991.98px) {
+  .dw-navbar.on-photo:not(.scrolled) .navbar-collapse .dw-nav-link { color: var(--dw-brown) !important; }
+  .dw-navbar.on-photo:not(.scrolled):has(.navbar-collapse.show) .dw-navbar__name,
+  .dw-navbar.on-photo:not(.scrolled):has(.navbar-collapse.show) .dw-navbar__toggler { color: var(--dw-brown) !important; }
+}
+.dw-navbar__name, .dw-nav-link { transition: color .3s, background .3s; }
+
+/* ---------- Ilustrasi mochi (SVG) ---------- */
+.dw-mochi { display: block; filter: drop-shadow(0 18px 24px rgba(107, 74, 58, .15)); }
+.dw-mochi--lg { width: 340px; height: 340px; }
+.dw-mochi--md { width: 180px; height: 180px; }
+.dw-mochi--sm { width: 190px; height: 190px; }
+img.dw-mochi { object-fit: contain; }
+
+/* ---------- Section umum ---------- */
+.dw-section { padding: 90px 0; }
+.dw-section--muted { background: var(--dw-cream); }
+.dw-eyebrow { font-weight: 600; letter-spacing: .12em; text-transform: uppercase; font-size: .8rem; color: var(--dw-pink-dark); margin-bottom: .6rem; }
+.dw-heading { font-size: clamp(1.8rem, 3.4vw, 2.5rem); font-weight: 600; margin-bottom: 1.2rem; }
+.dw-text { color: var(--dw-text); line-height: 1.75; text-align: justify; }
+.text-center .dw-text, .dw-lead { text-align: center; }
+.dw-lead { max-width: 620px; }
+
+.dw-reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+.dw-reveal.visible { opacity: 1; transform: none; }
+
+/* Angka */
+.dw-angka { padding: 50px 0; }
+.dw-stat { background: #fff; border-radius: var(--dw-radius); padding: 1.6rem 1rem; box-shadow: var(--dw-shadow); height: 100%; }
+.dw-stat__num { font-family: var(--dw-font-head); font-size: 2.6rem; font-weight: 600; color: var(--dw-pink-deep); }
+.dw-stat__label { margin: .2rem 0 0; color: var(--dw-muted); font-weight: 500; }
+
+/* Tentang */
+.dw-about-art { position: relative; display: flex; justify-content: center; align-items: center; min-height: 380px; }
+.dw-about-art__blob { position: absolute; width: 330px; height: 330px; border-radius: 42% 58% 55% 45% / 50% 40% 60% 50%; background: var(--dw-pink-soft); }
+.dw-about-art > span { position: relative; }
+.dw-about-art__badge { position: absolute; bottom: 30px; right: 10%; background: #fff; padding: .6rem 1rem; border-radius: 999px; box-shadow: var(--dw-shadow); font-weight: 600; color: var(--dw-pink-deep); display: flex; gap: .5rem; align-items: center; }
+.dw-vm-card { background: var(--dw-cream); border-radius: var(--dw-radius); padding: 2rem; height: 100%; border: 1.5px solid var(--dw-pink-soft); }
+.dw-vm-card__icon { width: 52px; height: 52px; border-radius: 14px; background: var(--dw-pink); color: var(--dw-brown-dark); display: grid; place-items: center; font-size: 1.4rem; margin-bottom: 1rem; }
+.dw-vm-card__title { font-size: 1.4rem; }
+.dw-misi { padding-left: 1.2rem; }
+.dw-misi li { margin-bottom: .35rem; }
+
+/* Produk */
+.dw-product { background: #fff; border-radius: var(--dw-radius); overflow: hidden; box-shadow: var(--dw-shadow); height: 100%; display: flex; flex-direction: column; transition: transform .3s; }
+.dw-product:hover { transform: translateY(-6px); }
+.dw-product__art { position: relative; display: grid; place-items: center; padding: 1.6rem 0 1rem; }
+.dw-product__badge { position: absolute; top: 14px; left: 14px; background: var(--dw-pink-dark); color: #fff; font-size: .75rem; font-weight: 600; border-radius: 999px; padding: .25rem .7rem; }
+.dw-product__body { padding: 1.2rem 1.4rem 1.5rem; display: flex; flex-direction: column; flex: 1; }
+.dw-product__name { font-size: 1.3rem; margin-bottom: .3rem; }
+.dw-product__price { font-family: var(--dw-font-head); font-weight: 600; color: var(--dw-pink-deep); font-size: 1.2rem; margin-bottom: .6rem; }
+.dw-product__price small { font-family: var(--dw-font-body); color: var(--dw-muted); font-weight: 500; font-size: .85rem; }
+.dw-product__desc { color: var(--dw-text); font-size: .95rem; line-height: 1.65; flex: 1; text-align: justify; }
+.dw-product .btn { margin-top: .8rem; }
+
+/* Proses */
+.dw-step { position: relative; background: var(--dw-cream); border-radius: var(--dw-radius); padding: 2.2rem 1.8rem 2rem; height: 100%; text-align: center; }
+.dw-step__num { position: absolute; top: -16px; left: 50%; transform: translateX(-50%); width: 34px; height: 34px; border-radius: 50%; background: var(--dw-pink-dark); color: #fff; font-weight: 700; display: grid; place-items: center; }
+.dw-step__icon { width: 74px; height: 74px; margin: .6rem auto 1rem; border-radius: 50%; background: var(--dw-pink-soft); color: var(--dw-pink-deep); font-size: 2rem; display: grid; place-items: center; }
+.dw-step__title { font-size: 1.35rem; }
+.dw-step .dw-text { text-align: center; }
+@media (min-width: 768px) {
+  .dw-steps > div:not(:last-child) .dw-step::after { content: "\F285"; font-family: "bootstrap-icons"; position: absolute; right: -22px; top: 50%; transform: translateY(-50%); color: var(--dw-pink-dark); font-size: 1.4rem; z-index: 2; }
+}
+
+/* Komitmen */
+.dw-komitmen { background: linear-gradient(135deg, var(--dw-pink-dark), var(--dw-pink-deep)); padding: 80px 0; color: #fff; }
+.dw-komitmen__icon { font-size: 2.2rem; color: #fff; opacity: .9; }
+.dw-komitmen__title { color: #fff; font-size: clamp(1.6rem, 3vw, 2.3rem); margin: 1rem auto; max-width: 760px; }
+.dw-komitmen__text { max-width: 640px; margin: 0 auto; opacity: .95; font-size: 1.05rem; }
+
+/* Struktur */
+.dw-org { display: flex; flex-direction: column; align-items: center; }
+.dw-org__line { width: 2px; height: 36px; background: var(--dw-pink-dark); margin-bottom: -2px; position: relative; z-index: 1; }
+.dw-org__row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; width: 100%; max-width: 900px; position: relative; padding-top: 36px; }
+.dw-org__row::before { content: ""; position: absolute; top: 0; left: calc((100% - 3rem) / 6 - 1px); right: calc((100% - 3rem) / 6 - 1px); height: 2px; background: var(--dw-pink-dark); }
+.dw-org__row .dw-person { position: relative; }
+.dw-org__row .dw-person::before { content: ""; position: absolute; top: -36px; left: 50%; transform: translateX(-50%); width: 2px; height: 36px; background: var(--dw-pink-dark); }
+.dw-person { background: #fff; border-radius: var(--dw-radius); padding: 1.6rem 1rem; text-align: center; box-shadow: var(--dw-shadow); }
+.dw-person--lead { min-width: 260px; border: 2px solid var(--dw-pink); }
+.dw-person__avatar { width: 72px; height: 72px; border-radius: 50%; margin: 0 auto .8rem; background: var(--dw-pink); color: var(--dw-brown-dark); font-family: var(--dw-font-head); font-weight: 600; font-size: 1.4rem; display: grid; place-items: center; }
+.dw-person--lead .dw-person__avatar { background: var(--dw-pink-dark); color: #fff; }
+.dw-person__name { font-size: 1.1rem; margin-bottom: .2rem; }
+.dw-person__role { color: var(--dw-pink-deep); font-weight: 500; margin: 0; font-size: .92rem; }
+@media (max-width: 767.98px) {
+  .dw-org__row { grid-template-columns: 1fr; padding-top: 0; gap: 1rem; }
+  .dw-org__row::before, .dw-org__row .dw-person::before { display: none; }
+}
+
+/* Lokasi */
+.dw-branch-tabs { display: flex; justify-content: center; gap: .6rem; flex-wrap: wrap; margin-bottom: 2rem; }
+.dw-branch-tab { border: 2px solid var(--dw-pink); background: #fff; color: var(--dw-brown); border-radius: 999px; padding: .55rem 1.3rem; font-weight: 600; }
+.dw-branch-tab.active { background: var(--dw-pink-dark); border-color: var(--dw-pink-dark); color: #fff; }
+.dw-map { position: relative; border-radius: var(--dw-radius); overflow: hidden; box-shadow: var(--dw-shadow); height: 100%; min-height: 360px; background: var(--dw-cream); }
+.dw-map iframe { width: 100%; height: 100%; min-height: 360px; border: 0; display: block; }
+.dw-map__loading, .dw-map__fallback { position: absolute; inset: 0; display: flex; flex-direction: column; gap: .6rem; align-items: center; justify-content: center; color: var(--dw-pink-deep); background: var(--dw-cream); text-align: center; padding: 1rem; }
+.dw-map__fallback i { font-size: 2.4rem; }
+.dw-branch-card { background: var(--dw-cream); border-radius: var(--dw-radius); padding: 2rem; height: 100%; }
+.dw-branch-card__title { font-size: 1.5rem; margin-bottom: .4rem; }
+.dw-branch-card__tag { display: inline-block; background: var(--dw-pink); color: var(--dw-brown-dark); font-size: .8rem; font-weight: 600; border-radius: 999px; padding: .2rem .8rem; margin-bottom: 1.2rem; }
+.dw-branch-card__list { list-style: none; padding: 0; margin: 0 0 1.5rem; }
+.dw-branch-card__list li { display: flex; gap: .7rem; margin-bottom: .8rem; line-height: 1.55; }
+.dw-branch-card__list i { color: var(--dw-pink-dark); font-size: 1.15rem; }
+
+/* Kontak */
+.dw-contact-list { list-style: none; padding: 0; margin: 1.5rem 0 0; }
+.dw-contact-list li { display: flex; gap: .9rem; align-items: flex-start; margin-bottom: 1rem; }
+.dw-contact-list i { width: 42px; height: 42px; border-radius: 12px; background: var(--dw-pink); color: var(--dw-brown-dark); display: grid; place-items: center; font-size: 1.2rem; flex-shrink: 0; }
+.dw-form { background: #fff; border-radius: var(--dw-radius); padding: 2rem; box-shadow: var(--dw-shadow); }
+.dw-form .form-label { font-weight: 600; color: var(--dw-brown); }
+.dw-form .form-control, .dw-form .form-select { border-radius: 12px; border-color: #EBD9D2; padding: .65rem .9rem; }
+.dw-form .form-control:focus, .dw-form .form-select:focus { border-color: var(--dw-pink-dark); box-shadow: 0 0 0 .2rem rgba(217, 119, 154, .2); }
+.dw-form .is-invalid { border-color: #d9534f; }
+.dw-error { display: none; color: #c0392b; font-size: .85rem; margin-top: .3rem; }
+.dw-error.show { display: block; }
+.dw-radio-group { display: flex; gap: .6rem; flex-wrap: wrap; }
+.dw-radio { position: relative; }
+.dw-radio input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.dw-radio input:focus-visible + span { outline: 3px solid rgba(217, 119, 154, .4); outline-offset: 2px; }
+.dw-radio span { display: inline-block; border: 2px solid var(--dw-pink); border-radius: 999px; padding: .45rem 1.2rem; font-weight: 600; cursor: pointer; color: var(--dw-brown); }
+.dw-radio input:checked + span { background: var(--dw-pink-dark); border-color: var(--dw-pink-dark); color: #fff; }
+
+/* Footer */
+.dw-footer { background: var(--dw-brown-dark); color: #F3E6DF; padding: 60px 0 28px; }
+.dw-footer__logo { background: #fff; border-radius: 50%; padding: 4px; }
+.dw-footer__brand { font-family: var(--dw-font-head); font-weight: 600; font-size: 1.4rem; color: #fff; }
+.dw-footer__text { color: #E2CFC6; max-width: 360px; }
+.dw-footer__head { color: #fff; font-size: 1.1rem; margin-bottom: 1rem; }
+.dw-footer__links { list-style: none; padding: 0; margin: 0; }
+.dw-footer__links li { margin-bottom: .5rem; color: #E2CFC6; }
+.dw-footer__links a { color: #E2CFC6; text-decoration: none; }
+.dw-footer__links a:hover { color: var(--dw-pink); }
+.dw-footer__hr { border-color: rgba(255, 255, 255, .2); margin: 2rem 0 1.2rem; }
+.dw-footer__copy { font-size: .9rem; color: #CDB8AE; }
+
+/* Modal */
+.dw-modal { position: fixed; inset: 0; background: rgba(74, 49, 40, .45); display: none; align-items: center; justify-content: center; z-index: 2000; padding: 1rem; }
+.dw-modal.open { display: flex; }
+.dw-modal__box { position: relative; background: #fff; border-radius: var(--dw-radius); padding: 2rem; max-width: 380px; width: 100%; text-align: center; }
+.dw-modal__box h3 { font-size: 1.35rem; }
+.dw-modal__box .dw-text { text-align: center; }
+.dw-modal__close { position: absolute; top: 12px; right: 12px; background: none; border: none; font-size: 1.1rem; color: var(--dw-muted); }
+
+/* Back to top */
+.dw-back-top { position: fixed; right: 20px; bottom: 20px; width: 46px; height: 46px; border-radius: 50%; border: none; background: var(--dw-pink-dark); color: #fff; box-shadow: var(--dw-shadow); opacity: 0; visibility: hidden; transition: opacity .3s; z-index: 1000; }
+.dw-back-top.show { opacity: 1; visibility: visible; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .dw-hero__art { animation: none; }
+  .dw-reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* Tentang Kami: visi-misi, foto, profil usaha */
+.dw-vm { display: flex; gap: 1.1rem; background: #fff; border-radius: var(--dw-radius); padding: 1.3rem 1.4rem; box-shadow: var(--dw-shadow); margin-top: 1.2rem; }
+.dw-vm__icon { flex-shrink: 0; width: 52px; height: 52px; border-radius: 50%; background: var(--dw-pink-soft); color: var(--dw-pink-deep); display: grid; place-items: center; font-size: 1.4rem; }
+.dw-vm__title { font-size: 1.05rem; margin-bottom: .25rem; }
+.dw-vm .dw-misi { padding-left: 1.1rem; color: var(--dw-text); line-height: 1.7; }
+.dw-about-photos { display: grid; grid-template-columns: 2fr 1fr; gap: 1rem; align-items: center; margin-bottom: 1.5rem; }
+.dw-about-photos img { width: 100%; object-fit: cover; border-radius: var(--dw-radius); box-shadow: var(--dw-shadow); }
+.dw-about-photos__main { aspect-ratio: 4 / 3; }
+.dw-about-photos__side { aspect-ratio: 3 / 4; margin-top: 3rem; }
+.dw-profile { background: #fff; border-radius: var(--dw-radius); padding: 1.6rem 1.6rem 1rem; box-shadow: var(--dw-shadow); }
+.dw-profile__title { font-size: 1.2rem; color: var(--dw-pink-deep); margin-bottom: 1rem; }
+.dw-profile__table { width: 100%; border-collapse: collapse; }
+.dw-profile__table th, .dw-profile__table td { padding: .7rem 0; border-bottom: 1px solid #F1E3DC; vertical-align: top; }
+.dw-profile__table tr:last-child th, .dw-profile__table tr:last-child td { border-bottom: none; }
+.dw-profile__table th { width: 38%; font-weight: 600; color: var(--dw-brown-dark); padding-right: 1rem; }
+.dw-profile__table td { color: var(--dw-text); }
+
+/* Footer kontak */
+.dw-footer__contact { list-style: none; padding: 0; margin: 0; }
+.dw-footer__contact li { display: flex; gap: .6rem; margin-bottom: .7rem; color: #E2CFC6; line-height: 1.5; }
+.dw-footer__contact i { color: var(--dw-pink); margin-top: .1rem; }
+.dw-footer__contact a { color: #E2CFC6; text-decoration: none; }
+.dw-footer__contact a:hover { color: var(--dw-pink); }
+.dw-footer__muted { color: #B9A39A; font-size: .88rem; }
+.dw-footer__hours { color: #fff; font-weight: 600; font-size: 1.1rem; margin-bottom: .4rem; }
+
+/* Tentang Kami dibuat ringkas agar muat satu layar */
+#tentang.dw-section { padding: 28px 0 56px; }
+#tentang .dw-heading { font-size: clamp(1.6rem, 2.6vw, 2.1rem); margin-bottom: .8rem; }
+#tentang .dw-text { font-size: .93rem; line-height: 1.55; margin-bottom: .6rem; }
+#tentang .dw-vm { padding: .75rem 1.1rem; margin-top: .65rem; gap: .9rem; }
+#tentang .dw-vm__icon { width: 42px; height: 42px; font-size: 1.15rem; }
+#tentang .dw-vm .dw-text, #tentang .dw-vm .dw-misi { font-size: .92rem; line-height: 1.55; }
+#tentang .dw-misi li { margin-bottom: .1rem; }
+#tentang .dw-about-photos { margin-bottom: 1rem; }
+#tentang .dw-about-photos__main { aspect-ratio: 16 / 10; }
+#tentang .dw-about-photos__side { aspect-ratio: 4 / 5; margin-top: 1.5rem; }
+#tentang .dw-profile { padding: 1.1rem 1.4rem .5rem; }
+#tentang .dw-profile__title { font-size: 1.1rem; margin-bottom: .4rem; }
+#tentang .dw-profile__table th, #tentang .dw-profile__table td { padding: .45rem 0; font-size: .92rem; }
+#tentang .dw-eyebrow { margin-bottom: .3rem; }
+
+/* ===== Skala lebih kecil (mengikuti Kriya Daun) ===== */
+html { font-size: 15px; }
+.dw-navbar { padding: .6rem 0; }
+.dw-navbar.scrolled { padding: .45rem 0; }
+.dw-navbar__logo { width: 34px; height: 34px; }
+.dw-navbar__name { font-size: 1.15rem; }
+.dw-nav-link { font-size: .9rem; padding: .35rem .7rem !important; }
+.dw-nav-cta { font-size: .88rem; padding: .45rem 1.1rem; }
+.dw-lang-btn { font-size: .8rem; padding: .25rem .6rem; }
+.dw-btn-primary, .dw-btn-outline { font-size: .9rem; padding: .5rem 1.25rem; border-width: 1.5px; }
+.dw-hero__title { font-size: clamp(1.9rem, 3.6vw, 2.9rem); }
+.dw-hero__sub { font-size: 1rem; max-width: 520px; }
+.dw-section { padding: 72px 0; }
+.dw-heading { font-size: clamp(1.6rem, 2.8vw, 2.2rem); }
+.dw-eyebrow { font-size: .75rem; }
+.dw-stat__num { font-size: 2.2rem; }
+.dw-stat { padding: 1.2rem .8rem; }
+.dw-product__name { font-size: 1.15rem; }
+.dw-product__price { font-size: 1.05rem; }
+.dw-product__desc { font-size: .92rem; }
+.dw-product .btn { font-size: .85rem; padding: .45rem 1rem; }
+.dw-mochi--sm { width: 160px; height: 160px; }
+.dw-branch-tab { font-size: .88rem; padding: .45rem 1.1rem; }
+.dw-person__name { font-size: 1rem; }
+.dw-slider__nav { width: 40px; height: 40px; }
+
+/* Proses kerja: kartu bergambar */
+.dw-step2 { background: #fff; border-radius: var(--dw-radius); overflow: hidden; box-shadow: var(--dw-shadow); height: 100%; }
+.dw-step2__img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+.dw-step2__body { padding: 1.2rem 1.4rem 1.5rem; }
+.dw-step2__num { font-weight: 600; font-size: .85rem; letter-spacing: .08em; color: var(--dw-pink-dark); }
+.dw-step2__title { font-size: 1.15rem; margin: .3rem 0 .5rem; }
+.dw-step2 .dw-text { font-size: .93rem; line-height: 1.6; }
+
+/* Lokasi: daftar info berlabel */
+.dw-branch-card { background: #fff; box-shadow: var(--dw-shadow); }
+.dw-branch-card__list li { padding: .9rem 0; margin: 0; border-bottom: 1px solid #F1E3DC; }
+.dw-branch-card__list li:last-child { border-bottom: none; }
+.dw-branch-card__list small { display: block; font-weight: 600; color: var(--dw-brown-dark); font-size: .82rem; margin-bottom: .15rem; }
+.dw-link { color: var(--dw-pink-deep); text-decoration: underline; }
+.dw-branch-card__title { font-size: 1.25rem; }
+
+/* Footer lebih ringkas (mengikuti Kriya Daun) */
+.dw-footer { padding: 48px 0 24px; }
+.dw-footer .container { max-width: 1140px; }
+.dw-footer__logo { width: 36px; height: 36px; padding: 3px; }
+.dw-footer__brand { font-size: 1.1rem; }
+.dw-footer__text { font-size: .9rem; line-height: 1.55; }
+.dw-footer__head { font-family: var(--dw-font-body); font-size: .82rem; font-weight: 600; color: #F3E6DF; margin-bottom: .7rem; }
+.dw-footer__links li { margin-bottom: .45rem; font-size: .9rem; }
+.dw-footer__contact li { font-size: .88rem; margin-bottom: .5rem; gap: .45rem; }
+.dw-footer__muted { font-size: .78rem; }
+.dw-footer__hours { font-size: .95rem; margin: .3rem 0; }
+.dw-footer__hr { margin: 1.6rem 0 1rem; }
+.dw-footer__copy { font-size: .8rem; }
+
+.dw-nav-cta.active { background: var(--dw-pink-deep); box-shadow: 0 0 0 3px rgba(217, 119, 154, .25); }
+#kontak.dw-section { padding-bottom: 44px; }
+
+/* Foto anggota struktur organisasi */
+.dw-person__avatar { width: 84px; height: 84px; overflow: hidden; border: 3px solid var(--dw-pink-soft); background: var(--dw-pink-soft); }
+.dw-person--lead .dw-person__avatar { border-color: var(--dw-pink); }
+.dw-person__avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Basa Jawa (aksara Jawa) */
+.dw-lang-jv { display: inline-grid; place-items: center; width: 20px; height: 15px; border-radius: 3px; background: var(--dw-pink-dark); color: #fff; font-family: 'Noto Sans Javanese', serif; font-size: .75rem; line-height: 1; }
+.dw-jv-inline { font-family: 'Noto Sans Javanese', serif; }
+html[lang="jv"] body { font-family: var(--dw-font-body), 'Noto Sans Javanese'; }
+html[lang="jv"] h1, html[lang="jv"] h2, html[lang="jv"] h3, html[lang="jv"] h4,
+html[lang="jv"] .dw-nav-link, html[lang="jv"] .btn, html[lang="jv"] .dw-eyebrow { font-family: var(--dw-font-head), 'Noto Sans Javanese'; letter-spacing: 0; text-transform: none; }
+html[lang="jv"] .dw-text, html[lang="jv"] p, html[lang="jv"] li, html[lang="jv"] td, html[lang="jv"] th { line-height: 2; }
+html[lang="jv"] .dw-hero__title, html[lang="jv"] .dw-heading { line-height: 1.6; }
+html[lang="jv"] .dw-text { text-align: left; }
+
+/* Ikon panah selalu tepat di tengah lingkaran (termasuk mode aksara Jawa) */
+.dw-slider__nav, .dw-back-top { display: grid; place-items: center; padding: 0; line-height: 1; font-family: var(--dw-font-body) !important; }
+.dw-slider__nav i, .dw-back-top i { display: block; line-height: 1; }
+.dw-slider__nav i::before, .dw-back-top i::before { display: block; vertical-align: 0; }
+
+/* Footer bermotif batik awan (cokelat, samar) */
+.dw-footer { position: relative; background-color: var(--dw-brown-dark); }
+.dw-footer::before { content: ""; position: absolute; inset: 0; background: url("../img/pattern/awan.svg?v=5") repeat; background-size: 560px 380px; pointer-events: none; }
+.dw-footer > .container { position: relative; z-index: 1; }
+
+/* Komitmen bermotif batik parang (putih samar di atas pink) */
+.dw-komitmen { position: relative; overflow: hidden; }
+.dw-komitmen::before { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(150, 60, 98, .70), rgba(120, 44, 78, .78)), url("../img/pattern/parang.svg?v=3") repeat; background-size: auto, 140px 140px; pointer-events: none; }
+.dw-komitmen > .container { position: relative; z-index: 1; }
+
+html[lang="jv"] .dw-navbar__name, html[lang="jv"] .dw-footer__brand, html[lang="jv"] .dw-radio span, html[lang="jv"] .dw-person__name, html[lang="jv"] .dw-branch-card__title, html[lang="jv"] .dw-product__price, html[lang="jv"] strong { font-family: var(--dw-font-head), 'Noto Sans Javanese'; }
